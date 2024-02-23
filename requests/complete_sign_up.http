@@ -1,0 +1,9 @@
+POST http://127.0.0.1:8000/university/api/complete_sign_up/
+Content-Type: application/json
+AUTHORIZATION: Token bf62a861038ee33b1e5036ba1a0b44163b21e675
+
+{
+  "phone": "1234567",
+  "mobile": "+96393123456789",
+  "address": "Syria, Damascus, ..."
+}

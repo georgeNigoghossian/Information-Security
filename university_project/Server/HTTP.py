@@ -1,6 +1,5 @@
 import json
 from io import BytesIO
-from urllib.parse import urlencode
 
 from university_project.Server.http_request_parser import http_request_parser
 
@@ -13,11 +12,16 @@ def execute_django(application, request, client_socket, host_port):
         'PATH_INFO': request.url,
         'SERVER_NAME': host_port[0],
         'SERVER_PORT': host_port[1],
-        'CONTENT_LENGTH': str(len(request.body))
     }
 
+    for key, value in request.headers.items():
+        environ[f'HTTP_{key}'] = value
+
     if request.method == 'POST':
-        post_data_bytes = json.dumps(request.body).encode('utf-8')
+        if isinstance(request.body, dict):
+            post_data_bytes = json.dumps(request.body).encode('utf-8')
+        else:
+            post_data_bytes = request.body
         post_data_io = BytesIO(post_data_bytes)
         environ['CONTENT_LENGTH'] = str(len(post_data_bytes))
         environ['CONTENT_TYPE'] = 'application/json'

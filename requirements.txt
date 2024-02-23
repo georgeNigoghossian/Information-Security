@@ -3,3 +3,5 @@ docutils~=0.16
 colorama~=0.4.5
 http_parser==0.9.0
 djangorestframework==3.14.0
+pycryptodome
+cryptography~=41.0.7

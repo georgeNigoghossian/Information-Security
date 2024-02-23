@@ -2,8 +2,9 @@ POST http://127.0.0.1:8000/university/api/sign-up/
 Content-Type: application/json
 
 {
-  "name": "admin3",
+  "name": "admin",
   "password": "12345678",
   "university": "1",
-  "role": "s"
+  "role": "s",
+  "national_id": "1234567890"
 }

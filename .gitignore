@@ -1,3 +1,5 @@
 .idea/
 migrations/
 /db.sqlite3
+/university_project/Client/client_private_key.pem
+/university_project/Client/client_public_key.pem

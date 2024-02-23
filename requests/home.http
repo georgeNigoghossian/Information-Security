@@ -1,0 +1,2 @@
+GET http://127.0.0.1:8000/university/api/home/
+AUTHORIZATION: Token 2f3ed7f90df5a49e11331a6d28e901d0668ef649
